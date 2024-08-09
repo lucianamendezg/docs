@@ -1,0 +1,60 @@
+---
+title: 'Output Mapping'
+description: 'Format your transformed documents'
+icon: 'table'
+---
+
+Output Mapping defines the structure of the final document.
+
+The column_locations data structure is a dictionary that maps table names to another dictionary, which in turn maps column names to their data types or column locations.
+
+For example, the following configures an output mapping to **Postgres**. Here, the table is named fund_performance, and we want 3 columns:
+* firm 
+* number_of_funds
+* commitment
+```python output_mapping.py
+output_mapping_config = client.configuration.output_mappings.create(
+	output_data_type="postgres",
+	created_by="user1",
+	column_locations={
+    	"public.fund_performance": {
+        	"firm": "char",
+        	"number_of_funds": "char",
+        	"commitment": "char"
+    	}
+	},
+	data_locations=["public.fund_performance"]
+)
+my_output_mapping = output_mapping_config.id
+```
+
+In the following case, we want to create an output mapping for an Excel file. Instead of a table name, we will provide the sheet number, and for each value, the column location. 
+```python output_mapping.py
+{
+  "output_filename": "adina.xlsx",
+  "output_data_type": "excel",
+  "created_by": "user1",
+  "column_locations": {
+    "CC 5": {
+      "Company Name": "A22",
+      "Description": "G22",
+      "Ini. Inv. Date": "I22",
+      "Round / Security": "L22",
+      "# Shares": "M22",
+      "Equity Stake": "N22",
+      "Cost": "O22",
+      "Value": "P22",
+      "Valuation Basis": "Q22",
+      "Multiple": "U22",
+      "IRR": "V22"
+    }
+  },
+  "data_locations": ["CC 5"]
+}
+```
+
+This mapping will change depending on the destination:
+- If the destination involves an Excel file, then we will require the column locations.
+
+- If the destination is a table, then we require the column type.
+    - The following creates an output mapping for postgres. 

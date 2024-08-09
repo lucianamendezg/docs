@@ -1,0 +1,68 @@
+---
+title: 'Prompt'
+description: 'Configure promps from a Marly supported observability provider'
+icon: 'terminal'
+---
+
+Marly currently supports Portkey as out observability provider to be able to track the language model's dynamic output.
+
+We allow hardcoding prompts but we hardcore discourage it, as your pipeline will become unstable. 
+
+The following example configures hardcoded prompts:
+
+```python add_prompts.py
+prompt_configs = [
+    {
+        "messages": [{"role": "system", "content": "You are an AI assistant specialized in extracting fund performance data."}],
+        "name": "FILE_EXTRACTION",
+        "variables": {"first_value": "", "second_value": ""},
+        "prompt_id": os.getenv("PP_FILE_EXTRACTION_PROMPT_ID"),
+        "created_by": "test-user"
+    },
+    {
+        "messages": [{"role": "system", "content": "You are an AI assistant specialized in generating examples of fund performance data."}],
+        "name": "EXAMPLE_GENERATION",
+        "variables": {"first_value": "", "second_value": ""},
+        "prompt_id": os.getenv("PP_EXAMPLE_GENERATION_PROMPT_ID"),
+        "created_by": "test-user"
+    },
+    {
+        "messages": [{"role": "system", "content": "You are an AI assistant specialized in extracting fund performance information."}],
+        "name": "EXTRACTION",
+        "variables": {"first_value": "", "second_value": ""},
+        "prompt_id": os.getenv("PP_EXTRACTION_PROMPT_ID"),
+        "created_by": "test-user"
+    },
+    {
+        "messages": [{"role": "system", "content": "You are an AI assistant specialized in transforming fund performance data."}],
+        "name": "TRANSFORMATION",
+        "variables": {"first_value": "", "second_value": ""},
+        "prompt_id": os.getenv("PP_TRANSFORMATION_PROMPT_ID"),
+        "created_by": "test-user"
+    },
+    {
+        "messages": [{"role": "system", "content": "You are an AI assistant specialized in validating fund performance data."}],
+        "name": "VALIDATION",
+        "variables": {"first_value": "", "second_value": ""},
+        "prompt_id": os.getenv("PP_VALIDATION_PROMPT_ID"),
+        "created_by": "test-user"
+    },
+    {
+        "messages": [{"role": "system", "content": "You are an AI assistant specialized in looking at images."}],
+        "name": "PAGE_FINDER",
+        "variables": {"first_value": "", "second_value": ""},
+        "prompt_id": "",
+        "created_by": "test-user"
+    },
+]
+
+prompt_ids = []
+
+for config in prompt_configs:
+    prompt_config = client.configuration.prompts.create(**config)
+    prompt_ids.append(prompt_config.id)
+
+print(f"Prompt IDs: {prompt_ids}")
+```
+
+If not being used for 

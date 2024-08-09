@@ -1,0 +1,26 @@
+---
+title: 'Schema'
+description: 'Define the fields for your final document'
+icon: 'diagram-project'
+---
+
+A schema defines what you want to extract from your document. 
+
+The language model you selected will analyze the document and match the data with the name of the keywords provided.
+
+This means that the name of your keyword doesn't have to exactly match that of the output mapping nor unstructured document.
+
+
+The following example 
+```python add_schema.py
+schema_config = client.configuration.schemas.create(
+    keywords={
+        "Firm": "The name of the firm",
+        "Number of Funds": "The number of funds managed by the firm",
+        "Commitment": "The commitment amount in millions of dollars",
+    },
+    created_by="test-user",
+)
+my_schema = schema_config.id
+print(f"Schema ID: {my_schema}")
+```

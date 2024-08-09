@@ -1,0 +1,39 @@
+---
+title: 'Pipeline'
+description: 'Bring everything together to structure your data'
+icon: 'pipe-section'
+---
+
+A pipeline takes a document, and using a pre-defined model and output mapping, will use a language model to structure your data.
+
+To configure a pipeline, the following should already be registered:
+- Destination
+- Language Model
+- Output Mapping
+- Prompt Configuration
+- Schema
+- Source
+
+```python create_pipeline.py
+pipeline_config = client.configuration.pipelines.create(
+	name="Local FS to PostgreSQL Pipeline",
+	run_type="batch",
+	pipeline_schema_id=my_schema,
+	created_by="test-user",
+	integrations={
+    	"input_data_source": "local_fs",
+    	"output_data_source": "postgres"
+	},
+	model_id=my_model,
+	prompt_ids={
+    	"FILE_EXTRACTION": prompt_ids[0],
+    	"EXAMPLE_GENERATION": prompt_ids[1],
+    	"EXTRACTION": prompt_ids[2],
+    	"TRANSFORMATION": prompt_ids[3],
+    	"VALIDATION": prompt_ids[4],
+    	"PAGE_FINDER": prompt_ids[5]
+	},
+	normalization_id=""
+)
+my_pipeline = pipeline_config.id
+```

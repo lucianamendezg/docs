@@ -46,7 +46,8 @@
       "group": "Get Started",
       "pages": [
         "introduction",
-        "quickstart"
+        "quickstart",
+        "try-it-yourself"
       ]
     },
     {

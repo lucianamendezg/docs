@@ -1,0 +1,22 @@
+---
+title: 'Schema'
+description: 'Define the fields for your final document'
+icon: 'diagram-project'
+---
+```python add_schema.py
+schema_config = client.configuration.schemas.create(
+    keywords={
+        "Firm": "The name of the firm",
+        "Number of Funds": "The number of funds managed by the firm",
+        "Commitment": "The commitment amount in millions of dollars",
+        "Percent of Total Comm": "The percentage of total commitment",
+        "Exposure (FMV + Unfunded)": "The exposure including fair market value and unfunded commitments in millions of dollars",
+        "Percent of Total Exposure": "The percentage of total exposure",
+        "TVPI": "Total Value to Paid-In multiple",
+        "Net IRR": "Net Internal Rate of Return as a percentage"
+    },
+    created_by="test-user",
+)
+my_schema = schema_config.id
+print(f"Schema ID: {my_schema}")
+```

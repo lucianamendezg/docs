@@ -1,0 +1,21 @@
+---
+title: 'Source'
+description: 'Define the location of the document you want to structure'
+icon: 'upload'
+---
+
+Sources can include the following:
+- Local
+- S3
+- Gmail
+- Postgres
+- Dynamo DB
+
+ The following example sets up a local source:
+
+ ```python load_local_document.py
+ local_fs_source_config = client.integrations.sources.register_local_fs(
+	base_path="/app/example_files"
+)
+
+ ```

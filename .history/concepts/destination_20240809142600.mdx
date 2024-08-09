@@ -1,0 +1,22 @@
+---
+title: 'Destination'
+description: 'The final destination for your sturctured data'
+icon: 'database'
+---
+
+Setup different destinations. If you cannot find your ideal destination, setting up your own destination is easy.
+
+The following example configures Postgres as the final destination for the data.
+````md
+```python destination.py
+postgres_destination_config = client.integrations.destinations.register_postgres(
+    host=str(os.getenv("POSTGRES_HOST", "host.docker.internal")),
+    port=int(os.getenv("POSTGRES_PORT", 5432)),
+    database=str(os.getenv("POSTGRES_DB", "postgres")),
+    user=str(os.getenv("POSTGRES_USER", "postgres")),
+    password=str(os.getenv("POSTGRES_PASSWORD", "postgres")),
+    schema=str(os.getenv("POSTGRES_SCHEMA", "public"))
+)
+print(f"PostgreSQL Destination registered: {postgres_destination_config}")
+```
+````
