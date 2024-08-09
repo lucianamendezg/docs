@@ -1,0 +1,122 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Marly",
+  "logo": {
+    "dark": "/logo/dark.png",
+    "light": "/logo/light.png"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#464646",
+    "light": "#F9FAFA",
+    "dark": "#464646",
+    "anchors": {
+      "from": "#F9FAFA",
+      "to": "#464646"
+    }
+  },
+  "topbarCtaButton": {
+    "type": "github",
+    "url": "https://github.com/velocitybolt/marly"
+  },
+  "tabs": [
+    {
+      "name": "API Reference",
+      "url": "api-reference"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Documentation",
+      "icon": "book-open-cover",
+      "url": "https://mintlify.com/docs"
+    },
+    {
+      "name": "Join our Community!",
+      "icon": "Discord",
+      "url": "https://mintlify.com/docs"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Get Started",
+      "pages": [
+        "introduction",
+        "quickstart",
+        "development",
+        "examples"
+      ]
+    },
+    {
+      "group": "API Documentation",
+      "pages": [
+        "api-reference/introduction"
+      ]
+    },
+    {
+    "group": "Schema Management",
+    "pages": [
+      "schema-management/list-schemas",
+      "schema-management/add-schema",
+      "schema-management/get-schema",
+      "schema-management/update-schema",
+      "schema-management/delete-schema"
+    ]
+  },
+  {
+    "group": "Pipeline Management",
+    "pages": [
+      "pipeline-management/list-pipelines",
+      "pipeline-management/add-pipeline",
+      "pipeline-management/get-pipeline",
+      "pipeline-management/update-pipeline",
+      "pipeline-management/delete-pipeline"
+    ]
+  },
+  {
+    "group": "Model Management",
+    "pages": [
+      "model-management/list-models",
+      "model-management/add-model",
+      "model-management/get-model",
+      "model-management/update-model",
+      "model-management/delete-model"
+    ]
+  },
+  {
+    "group": "Prompt Management",
+    "pages": [
+      "prompt-management/list-prompts",
+      "prompt-management/add-prompt",
+      "prompt-management/get-prompt",
+      "prompt-management/update-prompt",
+      "prompt-management/delete-prompt"
+    ]
+  },
+  {
+    "group": "Output Mapping Management",
+    "pages": [
+      "output-mapping-management/list-output-mappings",
+      "output-mapping-management/add-output-mapping",
+      "output-mapping-management/get-output-mapping",
+      "output-mapping-management/update-output-mapping",
+      "output-mapping-management/delete-output-mapping"
+    ]
+  },
+  {
+    "group": "Normalization Management",
+    "pages": [
+      "normalization-management/list-normalizations",
+      "normalization-management/add-normalization",
+      "normalization-management/get-normalization",
+      "normalization-management/update-normalization",
+      "normalization-management/delete-normalization"
+    ]
+  }
+  ],
+  "footerSocials": {
+    "x": "https://x.com/mintlify",
+    "github": "https://github.com/mintlify",
+    "linkedin": "https://www.linkedin.com/company/mintsearch"
+  }
+}

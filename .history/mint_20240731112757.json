@@ -1,0 +1,157 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Marly",
+  "logo": {
+    "dark": "/logo/dark.png",
+    "light": "/logo/light.png"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#464646",
+    "light": "#F9FAFA",
+    "dark": "#464646",
+    "anchors": {
+      "from": "#F9FAFA",
+      "to": "#464646"
+    }
+  },
+  "topbarCtaButton": {
+    "type": "github",
+    "url": "https://github.com/velocitybolt/marly"
+  },
+  "tabs": [
+    {
+      "name": "API",
+      "url": "api-reference"
+    },
+    {
+      "name": "Discord",
+      "url": "https://discord.com"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Documentation",
+      "icon": "book-open-cover",
+      "url": "https://mintlify.com/docs"
+    },
+    {
+      "name": "Join our Community!",
+      "icon": "Discord",
+      "url": "https://mintlify.com/docs"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Get Started",
+      "pages": [
+        "introduction",
+        "quickstart"
+      ]
+    },
+    {
+      "group": "Concepts",
+      "pages": [
+        "concepts/destination",
+        "Model",
+        "Normalization",
+        "Output Mapping",
+        "Pipeline",
+        "Prompt",
+        "Schema",
+        "Source"
+      ]
+    },
+    {
+      "group": "About",
+      "pages": [
+        "about/code-of-conduct"
+      ]
+    },
+    {
+      "group": "API Documentation",
+      "pages": [
+        "api-reference/introduction"
+      ]
+    },
+    {
+      "group": "Schema",
+      "pages": [
+        "api-reference/schema-management/list-schemas",
+        "api-reference/schema-management/add-schema",
+        "api-reference/schema-management/get-schema",
+        "api-reference/schema-management/update-schema",
+        "api-reference/schema-management/delete-schema"
+      ]
+    },
+    {
+      "group": "Pipeline",
+      "pages": [
+        "api-reference/pipeline-management/list-pipelines",
+        "api-reference/pipeline-management/add-pipeline",
+        "api-reference/pipeline-management/get-pipeline",
+        "api-reference/pipeline-management/update-pipeline",
+        "api-reference/pipeline-management/delete-pipeline"
+      ]
+    },
+    {
+      "group": "Model",
+      "pages": [
+        "api-reference/model-management/list-models",
+        "api-reference/model-management/add-model",
+        "api-reference/model-management/get-model",
+        "api-reference/model-management/update-model",
+        "api-reference/model-management/delete-model"
+      ]
+    },
+    {
+      "group": "Prompt",
+      "pages": [
+        "api-reference/prompt-management/list-prompts",
+        "api-reference/prompt-management/add-prompt",
+        "api-reference/prompt-management/get-prompt",
+        "api-reference/prompt-management/update-prompt",
+        "api-reference/prompt-management/delete-prompt"
+      ]
+    },
+    {
+      "group": "Output Mapping",
+      "pages": [
+        "api-reference/output-mapping-management/list-output-mappings",
+        "api-reference/output-mapping-management/add-output-mapping",
+        "api-reference/output-mapping-management/get-output-mapping",
+        "api-reference/output-mapping-management/update-output-mapping",
+        "api-reference/output-mapping-management/delete-output-mapping"
+      ]
+    },
+    {
+      "group": "Normalization",
+      "pages": [
+        "api-reference/normalization-management/list-normalizations",
+        "api-reference/normalization-management/add-normalization",
+        "api-reference/normalization-management/get-normalization",
+        "api-reference/normalization-management/update-normalization",
+        "api-reference/normalization-management/delete-normalization"
+      ]
+    },
+  {
+    "group": "Destination Management",
+    "pages": [
+      "api-reference/destination-management/register-s3-destination",
+      "api-reference/destination-management/register-excel-destination",
+      "api-reference/destination-management/register-postgres-destination"
+    ]
+  },
+  {
+    "group": "Source Management",
+    "pages": [
+      "api-reference/source-management/register-s3-integration",
+      "api-reference/source-management/register-local-fs-integration"
+    ]
+  }
+  ],
+  "footerSocials": {
+    "discord": "https://x.com/mintlify",
+    "github": "https://github.com/mintlify"
+  }
+}
